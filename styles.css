@@ -1,0 +1,90 @@
+@font-face { font-family: vDelicious; src: url('Roboto-Black.ttf'); }
+@font-face { font-family: Delicious; src: url('Roboto-Medium.ttf'); }
+@font-face { font-family: veryDelicious; src: url('StintUltraCondensed-Regular.ttf'); }
+
+span{
+    font-family: vDelicious;
+    background: red;
+   border-radius: 5px 5px 5px 5px;
+   border: 5px solid red;
+   font-size: 60px;
+   margin-right: 10px;
+    color: white;
+}
+ #header{
+     font-family: 'Oswald', sans-serif;
+     font-size: 100px;
+    margin-left:500px;
+ }
+ #lol{
+     margin-top: 50px;
+     margin-bottom: 50px;
+     margin-right: 300px;
+ }
+  #loll{
+      margin-top: 50px;
+     margin-bottom: 50px;
+     margin-right: 300px;
+ }
+   #lolll {
+       margin-top: 50px;
+     margin-bottom: 30px;
+        margin-right: 300px;
+   }
+#text1{
+    font-family: Delicious;
+    margin-left: 10px;
+    font-size: 50px;
+    float:left;
+    margin-right: 50px;
+    text-align: center;
+}
+
+
+#text2{
+    font-family: Delicious;
+    font-size: 50px;
+    float: left;
+    margin-right: 50px;
+    text-align: center;
+}
+
+#totaldeaths{
+    margin-left: 100px;
+}
+
+#text3{
+    font-family: Delicious;
+    font-size: 50px;
+    float:left;
+    margin-right: 50px;
+    text-align: right;
+    position:relative;
+    z-index: 2;
+}
+#totalrecovered{
+}
+#totalconfirmed{
+    margin-left: 435px;
+}
+iframe {
+  position:absolute;
+  border:solid 1px #000;
+    margin-left:525px;
+    margin-bottom: 1000000px;
+}
+/*.videoWrapper {*/
+/*    float: left;*/
+/*  position: relative;*/
+/*  padding-bottom: 56.25%;*/
+/*  !* 16:9 *!*/
+
+/*  height: 0;*/
+/*}*/
+
+/*.videoWrapper iframe {*/
+/*  */
+/*  top: 0;*/
+/*  left: 0;*/
+/*}*/
+

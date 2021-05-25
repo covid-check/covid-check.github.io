@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div>
+    <div id="text1">Total Confirmed:</div>
+    <div id="totalconfirmed"></div>
+</div>
+<div>
+    <div id="text2">Total Deaths:</div>
+    <div id="totaldeaths"></div>
+</div>
+<div>
+    <div id="text3">Total Recovered:</div>
+    <div id="totalrecovered"></div>
+</div>
+
+
+    <script type="text/javascript">
+        let cases
+        let cases_arr
+        let cases_arr_keys = []
+        let cases_arr_values = []
+        let dictionary = {}
+
+        function httpGetAsync(theUrl, callback) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous
+            xmlHttp.send(null);
+        }
+
+        httpGetAsync('https://api.covid19api.com/world/total', function (response) {
+            cases = response;
+            console.log(cases)
+            cases_arr = cases.split(',')
+            console.log(cases_arr)
+            cases_arr[0] = cases_arr[0].replace('{', '')
+            cases_arr[2] = cases_arr[2].replace('}', '')
+            console.log(cases_arr)
+            cases_arr[0] = cases_arr[0].replace('"', '')
+            cases_arr[1] = cases_arr[1].replace('"', '')
+            cases_arr[2] = cases_arr[2].replace('"', '')
+            cases_arr[0] = cases_arr[0].replace('\"', '')
+            cases_arr[1] = cases_arr[1].replace('\"', '')
+            cases_arr[2] = cases_arr[2].replace('\"', '')
+            cases_arr[2] = cases_arr[2].replace('\n', '')
+            console.log(cases_arr)
+            for (i = 0; i < cases_arr.length; i++) {
+                let the_list = cases_arr[i].split(':')
+                cases_arr_keys.push(the_list[0])
+                cases_arr_values.push(the_list[1])
+                dictionary[the_list[0]]=the_list[1]
+            }
+            console.log(cases_arr_keys)
+            console.log(cases_arr_values)
+            console.log(dictionary)
+            for(b = 0; b< cases_arr_values[0].length; b++){
+                    var element = document.getElementById("totalconfirmed")
+                    var paraa=document.createElement("span")
+                    var nodee = document.createTextNode(cases_arr_values[0][b]);
+                    paraa.appendChild(nodee);
+                    element.appendChild(paraa)
+                }
+            for(a = 0; a< cases_arr_values[1].length; a++){
+                    var elementt = document.getElementById("totaldeaths")
+                    var paraaaa=document.createElement("span")
+                    var nodeee = document.createTextNode(cases_arr_values[1][a]);
+                    paraaaa.appendChild(nodeee);
+                    elementt.appendChild(paraaaa)
+                }
+            for(c = 0; c< cases_arr_values[2].length; c++){
+                    var elementtt = document.getElementById("totalrecovered")
+                    var para=document.createElement("span")
+                    var node = document.createTextNode(cases_arr_values[2][c]);
+                    para.appendChild(node);
+                    elementtt.appendChild(para)
+                }
+
+        })
+    </script>
+
+
+
+</body>
+</html>
