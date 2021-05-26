@@ -1,7 +1,7 @@
 function getMobileOperatingSystem() {
  const userAgent = navigator.userAgent || navigator.vendor;
   if (['ipad', 'iphone', 'ipod'].some(e => userAgent.toLowerCase().includes(e))) {
-       document.body.style.backgroundImage="url('COVID-19-CDC.resized.rotated.png')";
+       document.body.style.backgroundImage="url('COVID-19-CDC.resized.rotated.jpg')";
       document.getElementById("text1").style.color='black'
       document.getElementById("text2").style.color='black'
       document.getElementById("text3").style.color='black'
