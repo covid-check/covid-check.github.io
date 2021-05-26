@@ -21,7 +21,7 @@ function getMobileOperatingSystem() {
       document.body.style.zoom = "50%";
 } else if (userAgent.toLowerCase().includes('android')) {
 
-      document.body.style.backgroundImage="url('COVID-19-CDC.resized.rotated.png')";
+      document.body.style.backgroundImage="url('COVID-19-CDC.resized.rotated.jpg')";
       document.getElementById("text1").style.color='black'
       document.getElementById("text2").style.color='black'
       document.getElementById("text3").style.color='black'
